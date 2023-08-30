@@ -10,4 +10,4 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\rdp\shell\open]
  
 [HKEY_CLASSES_ROOT\rdp\shell\open\command]
-@="cmd /V:ON  /c setlocal && set url=%1 && set url=!url:~23,-2! && start mstsc.exe /admin /f /v:!url!"
+@="cmd.exe /V:ON /c setlocal && set url=%1 && set url=!url:~6,-2! && start mstsc.exe /admin /f /v:!url!"
