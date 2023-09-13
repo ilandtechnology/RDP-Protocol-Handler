@@ -10,4 +10,16 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\rdp\shell\open]
  
 [HKEY_CLASSES_ROOT\rdp\shell\open\command]
-@="cmd.exe /V:ON /c setlocal && set url=%1 && set url=!url:~6,-2! && start mstsc.exe /admin /f /v:!url!"
+@="cmd.exe /V:ON /c setlocal && set url=%1 && set url=!url:~6,-2! && start mstsc.exe /f /v:!url!"
+
+[HKEY_CLASSES_ROOT\rdpsso]
+@="URL:Remote Desktop Protocol with SSO Restricted Admin"
+"EditFlags"=dword:00000002
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\rdpsso\shell]
+ 
+[HKEY_CLASSES_ROOT\rdpsso\shell\open]
+ 
+[HKEY_CLASSES_ROOT\rdpsso\shell\open\command]
+@="cmd.exe /V:ON /c setlocal && set url=%1 && set url=!url:~6,-2! && start mstsc.exe /restrictedadmin /f /v:!url!"
